@@ -24,6 +24,9 @@ class FlinkModel(rawModel: Predictor[_], rh: ReflectHelper) extends Model(rawMod
   def pmap: ParameterMap = ParameterMap.Empty
 
   def predict(dataset: DataSet[_]): DataSet[_] = {
+    println("came until here")
+    println(s"$predictMethod")
+    println(s"${rh.predictOperator}")
     predictMethod(dataset, pmap, rh.predictOperator).asInstanceOf[DataSet[_]]
   }
 }

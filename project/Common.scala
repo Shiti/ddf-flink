@@ -12,7 +12,7 @@ object Common {
 
   lazy val theScalaVersion = "2.10.4"
 
-  lazy val flinkVersion = "0.9.1"
+  lazy val flinkVersion = "1.0-SNAPSHOT"
 
   lazy val submodulePom = (
     <!--
@@ -77,7 +77,8 @@ object Common {
     concurrentRestrictions in Global += Tags.limit(Tags.Test, 1),
     resolvers ++= Seq(Resolver.mavenLocal,
       "Adatao Mvnrepos Snapshots" at "https://raw.github.com/adatao/mvnrepos/master/snapshots",
-      "Adatao Mvnrepos Releases" at "https://raw.github.com/adatao/mvnrepos/master/releases")
+      "Adatao Mvnrepos Releases" at "https://raw.github.com/adatao/mvnrepos/master/releases",
+      "Apache Snapshots" at "http://repository.apache.org/snapshots")
   )
 
 }
